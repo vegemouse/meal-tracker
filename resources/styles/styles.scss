@@ -1,0 +1,140 @@
+@import 'reset';
+
+$green: #d6ffe4;
+@mixin form {
+  background-color: $green;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  h2 {
+    font-weight: bold;
+  }
+  button {
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 150ms;
+    padding: 10px 5px;
+    background-color: darken($green, 10%);
+    letter-spacing: 2px;
+    &:hover {
+      background-color: darken($green, 20%);
+    }
+  }
+  &-input {
+    label {
+      letter-spacing: 2px;
+      margin-right: 5px;
+    }
+    input {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid darken($green, 20%);
+      padding: 8px;
+      height: 25px;
+      font-size: 1.1em;
+      letter-spacing: 2px;
+      transition: all 100ms;
+      color: #444;
+      &:hover, &:focus, &:active {
+        background-color: darken($green, 10%);
+        outline: 0;
+      }
+    }
+  }
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  background: white;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  background-color: $green;
+  margin: 0 auto;
+}
+h2 {
+  font-size: 1.1em;
+}
+h3 {
+  font-weight: bold;
+}
+
+.filter-by {
+  margin: 20px auto;
+  width: 260px;
+  height: 17px;
+  padding: 10px;
+  background-color: $green;
+  font-size: 0.9em;
+  select {
+    width: 200px;
+    border: 0;
+    background-color: $green;
+    height: 100%;
+    font-size: 0.9em;
+  }
+}
+
+.meals {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.meal {
+  background-color: $green;
+  padding: 10px 0;
+  position: relative;
+  width: 31.5%;
+  margin: 20px 10px;
+  &-name {
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    margin: 10px 0;
+  }
+  &-details {
+    margin: 10px 0;
+    font-style: italic;
+    color: #444;
+  }
+  .edit {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    img {
+      height: 15px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.new-form {
+  @include form;
+}
+
+.edit-form {
+  @include form;
+}
+
+strong {
+  font-size: 1.1em;
+  font-weight: bold;
+}
